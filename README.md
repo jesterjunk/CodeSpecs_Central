@@ -1,1 +1,3 @@
-# CodeSpecs_Central
+# CodeSpecs Central
+
+Welcome to CodeSpecs Central, your ultimate repository for all technical references and documentation essential for the development of cutting-edge operating systems. This centralized hub provides in-depth information on various hardware architectures, boot loaders, emulation tools, and more. Whether you're working on EFI, ARM64, QEMU, x86_64, or any other critical component, CodeSpecs Central is your go-to resource for detailed specifications, key features, and practical implementation guides. Empower your OS development with the comprehensive knowledge and insights available at CodeSpecs Central.

@@ -4,4 +4,4 @@
 
 <p align="center"><br><br>Copyright &copy; 2024 <a href="https://github.com/jesterjunk"><b>jesterjunk</b></a> & <a href="https://github.com/ThatOSDev"><b>ThatOSDev</b></a><br><br></p>
 
-<p align="center"><a href="/LICENSE" target="_blank"><b>MIT LICENSE</b></a><br><br></p>
+<p align="center"><a href="/LICENSE.txt" target="_blank"><b>MIT LICENSE</b></a><br><br></p>

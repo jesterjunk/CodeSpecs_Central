@@ -1,27 +1,26 @@
 <!DOCTYPE HTML>
-<html lang="en" style="background: hsl(70, 8%, 15%); overflow-y: scroll;">
+<html lang="en" style="background: hsl(70, 4%, 8%); overflow-y: scroll;">
 <head>
     <meta charset="UTF-8">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <title>untitled</title>
     <style>
+
+    :root {
+        --c0: rebeccapurple;
+        --c1: hsl(72, 9%, 11%);
+    }
+
     body {
         display: flex;
-        flex-direction: column;
-/*        justify-content: center;*/
-        align-content: space-between;
-        align-items: center;
-        height: 100vh;
-        align-content: stretch;
-        width: 900px;
-        margin: 0 auto;
+        justify-content: center;
+        margin: 0;
         color: hsl(60, 30%, 96%);
         font-family: Arial, Helvetica, sans-serif;
+        font-size: 0px;
+        text-align: center;
+        height: 100vh;
     }
 
-    div {
-
-    }
 
     /*  URLS  */
     a:link,
@@ -30,21 +29,114 @@
     a:active {color: hsl(40, 93%, 51%);}
     /*  URLS  */
 
+    h1, h2, h3, h4, h5, h6, p { margin: 0; }
 
-    #header {
-        width: 100%;
+    h1 { 2.0em }
+    h2 { 1.5em }
+    h3 { 1.3em }
+    h4 { 1.0em }
+    h5 { 0.8em }
+    h6 { 0.7em }
+
+
+    div {
+/*        border: 1px solid var(--c0);*/
     }
-    #header h1 {
-        text-align: center;
-        border-bottom: 1px solid hsl(50, 11%, 41%);
+    #l1 {
+        font-size: 14px;
+/*        max-width: 900px;*/
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: stretch;
     }
-    #content {
-        width: 100%;
+    #l1 > #head {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: space-around;
+        background: var(--c1);
+        min-height: 80px;
+        max-height: 80px;
     }
-    #footer {
-        width: 100%;
-        text-align: center;
+    #l1 > #head > div {
     }
+    #l1 > #head > div > h1 {
+        margin: 0;
+        line-height: 1.25em;
+    }
+    #l1 > #head > div > h4 {
+        margin: 0;
+    }
+    #l1 > #main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+/*        border: 1px solid var(--c0);*/
+    }
+    #l1 > #main > div {
+        max-width: 900px;
+        background: hsl(70, 8%, 15%);
+        border-radius: 4px;
+        text-align: left;
+/*        border: 1px solid var(--c0);*/
+    }
+    #l1 > #main > div > h3 {
+        margin: 0;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    #l1 > #main > div > p {
+        margin: 0;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        margin-left: 16px;
+        margin-right: 16px;
+        line-height: 1.2em;
+    }
+    #l1 > #main > div > hr {
+        margin: 0;
+/*        margin-top: 16px;*/
+/*        margin-bottom: 16px;*/
+        border: none;
+        height: 1px;
+        background: hsl(70, 4%, 8%);
+    }
+    #l1 > #main > div > ol > li {
+        padding: 8px;
+        line-height: 1.2em;
+    }
+    #l1 > #main div:not(:last-of-type) {
+        margin-bottom: 24px;
+    }
+    #l1 > #foot {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background: var(--c1);
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    #l1 > #foot > div > p {
+        margin: 0;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        margin-left: 16px;
+        margin-right: 16px;
+        line-height: 1.2em;
+    }
+
     .license-container {
         position: relative;
         display: inline-block;
@@ -57,15 +149,20 @@
 
     .license-text {
         display: none;
-        position: relative;
-        width: auto;
+        position: absolute;
+        right: -290px;
+        top: -569px;
+        width: calc(auto);
+        margin-top: 10px;
         padding: 10px;
         text-align: left;
         border: 1px solid hsl(50, 11%, 41%);
+        background: hsl(70, 8%, 15%);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1.6;
         white-space: pre;
+        filter: drop-shadow(0 0 2em hsla(0, 0%, 0%, 0.9));
     }
 
     .license-container:hover .license-text {
@@ -76,27 +173,103 @@
 <body>
 
 
-<div id="header">
+<div id="l1">
+    <div class="l2" id="head">
+        <div class="l3">
+            <h1>CodeSpecs Central</h1>
+        </div>
+        <div class="l3">
+            <h4>Technical references and documentation for OS development.</h4>
+        </div>
+    </div>
+    <div class="l2" id="main">
+        <div id="efi">
+            <h3>EFI</h3>
+            <hr>
+            <p>
+                EFI, or Extensible Firmware Interface, is a specification designed to replace the traditional BIOS (Basic Input/Output System) firmware interface in personal computers. Developed by Intel, EFI provides a more flexible, secure, and advanced interface between the operating system and the firmware. The Group is known as the UEFI (Unified Extensible Firmware Interface), which is managed by the Unified EFI Forum and it's website uefi.org.
+                <br>
+                <br>
+                Key features of the EFI include:
+            </p>
+            <ol>
+                <li><b>Modularity</b>: EFI is designed to be modular, allowing for easy updates and customization.</li>
+                <li><b>User Interface</b>: It supports a Graphics Output Protocol known as GOP, and a pre-boot environment that can run applications, making it more user-friendly than BIOS.</li>
+                <li><b>Advanced Booting</b>: EFI supports booting from larger hard drives (over 2 TB) and uses the GUID Partition Table (GPT) instead of the Master Boot Record (MBR).</li>
+                <li><b>Security</b>: It includes secure boot features that help prevent unauthorized operating systems and malware from loading during the boot process.</li>
+                <li><b>Compatibility</b>: It provides backward compatibility with legacy BIOS services.</li>
+            </ol>
+            <p>Overall, EFI enhances system performance, security, and usability compared to the traditional BIOS.</p>
+        </div>
+        <div id="arm64">
+            <h3>ARM64</h3>
+            <hr>
+            <p>
+                ARM64, also known as AArch64, refers to the 64-bit architecture for ARM processors. ARM (Advanced RISC Machines) is a family of computer processors optimized for energy efficiency, which are widely used in mobile devices, embedded systems, and increasingly in servers and personal computers.
+                <br>
+                <br>
+                Key features of ARM64/AArch64 include:
+            </p>
+            <ol>
+                <li><b>64-bit Processing</b>: ARM64 supports 64-bit processing, allowing for more memory addressing and improved performance for complex applications and large datasets compared to the 32-bit ARM architecture.</li>
+                <li><b>Increased Registers</b>: The ARM64 architecture includes more general-purpose registers and larger floating-point registers, enhancing computational capabilities and efficiency.</li>
+                <li><b>Energy Efficiency</b>: Like other ARM architectures, ARM64 maintains a focus on low power consumption, making it suitable for battery-powered devices and energy-efficient servers.</li>
+                <li><b>Backward Compatibility</b>: ARM64 maintains backward compatibility with 32-bit ARM instructions, allowing it to run existing 32-bit software alongside new 64-bit applications.</li>
+                <li><b>Scalability</b>: ARM64 is designed to scale across a wide range of devices, from small embedded systems to high-performance servers, providing flexibility in application.</li>
+            </ol>
+            <p>
+                Overall, ARM64/AArch64 enhances performance, efficiency, and scalability, making it a versatile architecture for modern computing needs.
+            </p>
+        </div>
+        <div id="qemu">
+            <h3>QEMU</h3>
+            <hr>
+            <p>
+                QEMU (Quick EMUlator) is a free and open-source emulator and virtualizer that allows users to run software applications and operating systems on different hardware architectures. QEMU can emulate a variety of hardware platforms, making it a powerful tool for development, testing, and debugging.
+                <br>
+                <br>
+                Key features of QEMU include:
+            </p>
+            <ol>
+                <li><b>Hardware Emulation</b>: QEMU can emulate various hardware components such as CPU, memory, disks, network interfaces, and more. This allows users to run software designed for one architecture on a different architecture.</li>
+                <li><b>Virtualization</b>: When used in conjunction with hardware virtualization extensions (such as Intel VT-x or AMD-V), QEMU can provide near-native performance for guest operating systems by utilizing KVM (Kernel-based Virtual Machine) or Xen hypervisors.</li>
+                <li><b>Cross-Platform Support</b>: QEMU supports a wide range of architectures including x86, ARM, PowerPC, MIPS, SPARC, and more, making it a versatile tool for cross-platform development.</li>
+                <li><b>Snapshotting</b>: QEMU allows users to take snapshots of the emulated or virtualized system, enabling easy rollback to a previous state. This is particularly useful for testing and development purposes.</li>
+                <li><b>Live Migration</b>: QEMU supports live migration, allowing a running virtual machine to be moved from one host to another without downtime.</li>
+                <li><b>Device Passthrough</b>: QEMU can pass through hardware devices to the guest operating system, allowing direct access to physical hardware.</li>
+            </ol>
+            <p>
+                Overall, QEMU is a powerful and flexible tool for emulation and virtualization, widely used in various domains including software development, testing, and research.
+            </p>
+        </div>
+        <div>
+            <h3>x86_64</h3>
+            <hr>
+            <p>
+                x86_64, also known as x64 (From Intel) or AMD64 (From AMD), is a 64-bit version of the x86 instruction set architecture. It was initially developed by AMD and later adopted by Intel, becoming a standard for 64-bit computing. The architecture extends the capabilities of the older 32-bit x86 architecture, providing several significant enhancements.
+                <br>
+                <br>
+                Key features of x86_64 include:
+            </p>
+            <ol>
+                <li><b>64-bit Processing</b>: x86_64 supports 64-bit integer and floating-point arithmetic, allowing for greater computational power and the ability to handle larger datasets and memory addresses.</li>
+                <li><b>Extended Memory Addressing</b>: The architecture supports a significantly larger address space compared to 32-bit x86, allowing systems to use more than 4 GB of RAM, which is a critical advantage for modern applications and operating systems.</li>
+                <li><b>Additional Registers</b>: x86_64 introduces more general-purpose registers and wider SIMD (Single Instruction, Multiple Data) registers, improving performance and efficiency in various computational tasks.</li>
+                <li><b>Backward Compatibility</b>: x86_64 maintains backward compatibility with 32-bit x86 instructions, allowing it to run legacy 32-bit software alongside new 64-bit applications without modification.</li>
+                <li><b>Enhanced Security Features</b>: The architecture includes features such as NX-bit (No-eXecute) (For AMD64) and XD-bit (for x86_64) for preventing certain types of security exploits and improvements in hardware-level security.</li>
+            </ol>
+            <p>
+                Overall, x86_64 provides a robust and versatile platform for modern computing, supporting a wide range of applications from desktop and server operating systems to complex computational tasks in various industries.
+            </p>
+        </div>
+    </div>
+    <div class="l2" id="foot">
+        <div>
+            <p class="center">Copyright &copy; 2024 <a href="https://github.com/jesterjunk" target="_blank"><b>jesterjunk</b></a> & <a href="https://github.com/ThatOSDev" target="_blank"><b>ThatOSDev</b></a></p>
 
-    <h1 class="center">CodeSpecs Central</h1>
-
-</div>
-
-
-<div id="content">
-
-    <p class="left">Welcome to CodeSpecs Central, your ultimate repository for all technical references and documentation essential for the development of cutting-edge operating systems. This centralized hub provides in-depth information on various hardware architectures, boot loaders, emulation tools, and more. Whether you're working on EFI, ARM64, x86_64, or any other critical component, CodeSpecs Central is your go-to resource for detailed specifications, key features, and practical implementation guides. Empower your OS development with the comprehensive knowledge and insights available at CodeSpecs Central.</p>
-
-</div>
-
-
-<div id="footer" class="center">
-
-    <p class="center">Copyright &copy; 2024 <a href="https://github.com/jesterjunk" target="_blank"><b>jesterjunk</b></a> & <a href="https://github.com/ThatOSDev" target="_blank"><b>ThatOSDev</b></a></p>
-
-    <div class="license-container">
-        <a href="LICENSE.txt" class="license-link"><strong>MIT License</strong></a>
-        <div class="license-text left">MIT License
+            <div class="license-container">
+                <a href="LICENSE.txt" class="license-link"><strong>MIT License</strong></a>
+                <div class="license-text left">MIT License
 
 Copyright (c) 2024 jesterjunk & ThatOSDev
 
@@ -117,10 +290,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</div>
+            </div>
+        </div>
     </div>
-
 </div>
-
 
 
 <a href="" id="github-corner" class="github-corner" aria-label="View source on GitHub" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#000000; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
